@@ -16,11 +16,16 @@ function fetchItemImages (itemId) {
   return Image.findOne({ itemId: itemId });
 }
 
-function fetchAll(callback) {
+function fetchAll() {
   return Image.find({});
+}
+
+function deleteAll() {
+  return Image.remove({});
 }
 
 module.exports = Image;
 module.exports.insertRecords = insertRecords;
 module.exports.fetchItemImages = fetchItemImages;
 module.exports.fetchAll = fetchAll;
+module.exports.deleteAll = deleteAll;
