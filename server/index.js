@@ -33,7 +33,7 @@ app.get('/itemImages/:itemId/mainImage', function(req, res) {
   Images.fetchItemImages(req.params.itemId)
     .then((data) => {
       if (data) {
-        res.status(200).send({itemImage: data.itemImages[0].small});
+        res.status(200).send({image: data.itemImages[0].small});
       } else {
         res.sendStatus(404);
       }
@@ -43,14 +43,5 @@ app.get('/itemImages/:itemId/mainImage', function(req, res) {
       console.log(err);
     })
 })
-
-// connect()
-//   .then(() => {
-//     console.log('Connected to database');
-//   })
-
-// app.listen(PORT, () => {
-//   console.log(`listening on port ${PORT}`);
-// });
 
 module.exports = app

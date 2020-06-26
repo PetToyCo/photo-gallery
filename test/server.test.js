@@ -47,7 +47,7 @@ test('successfully retrieves main image url for item 100', () => {
   return request(app).get('/itemImages/100/mainImage')
     .then((response) => {
       expect(response.status).toBe(200);
-      expect(response.body.itemImage).toBe('https://images.unsplash.com/photo-1?w=54')
+      expect(response.body.image).toBe('https://images.unsplash.com/photo-1?w=54')
     })
 });
 
