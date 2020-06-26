@@ -27,7 +27,6 @@ class Gallery extends React.Component {
 
   handleMouseEnter(e) {
     let event = e.nativeEvent.offsetX;
-    // console.log('onMouseEnter', e.clientX, e.clientY)
     console.log('onMouseEnter', e.nativeEvent.offsetX, e.nativeEvent.offsetY)
     this.setState({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
   }
@@ -41,7 +40,6 @@ class Gallery extends React.Component {
   }
 
   handleMouseLeave(e) {
-    // console.log('onMouseLeave', e.nativeEvent.clientX, e.nativeEvent.clientY)
     this.setState({ x: null, y: null });
   }
 
@@ -50,6 +48,7 @@ class Gallery extends React.Component {
       <div>
         <p>Kate</p>
         <img src={this.state.currentImage} onMouseEnter={this.handleMouseEnter} onMouseMove={this.handleMouseMove} onMouseLeave={this.handleMouseLeave}/>
+        <div id="preview"></div>
         {this.props.itemImages.map((image) =>
             <img src={image.small} onClick={()=> this.onImageClick(image)}/>
         )}
