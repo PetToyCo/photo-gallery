@@ -13,7 +13,7 @@ function insertRecords (records) {
 }
 
 function fetchItemImages (itemId) {
-  return Image.findOne({ itemId: itemId });
+  return Image.findOne({ itemId: itemId }, '-_id -__v');
 }
 
 function fetchAll() {
