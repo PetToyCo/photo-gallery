@@ -3,7 +3,10 @@ const Images = require('./Images.js');
 const mongoose = require('mongoose');
 
 beforeAll(() => {
-  return mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
+  return mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true })
+  .then(() => {
+    return Images.deleteAll()
+  })
 })
 
 afterAll(() => {
