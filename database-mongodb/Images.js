@@ -9,6 +9,7 @@ const imageSchema = new mongoose.Schema({
 const Image = mongoose.model('Image', imageSchema);
 
 function insertRecords (records) {
+  console.log("record count:", records.length);
   return Image.insertMany(records);
 }
 

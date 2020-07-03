@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 
-app.get('/itemImages/:itemId', function(req, res) {
+app.get('http://localhost:3003/itemImages/:itemId', function(req, res) {
   console.log(req.params.itemId);
   Images.fetchItemImages(req.params.itemId)
     .then((data) => {
@@ -28,7 +28,7 @@ app.get('/itemImages/:itemId', function(req, res) {
     })
 })
 
-app.get('/itemImages/:itemId/mainImage', function(req, res) {
+app.get('http://localhost:3003/itemImages/:itemId/mainImage', function(req, res) {
   console.log(req.params.itemId);
   Images.fetchItemImages(req.params.itemId)
     .then((data) => {

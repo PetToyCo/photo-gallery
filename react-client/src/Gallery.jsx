@@ -4,15 +4,11 @@ import { findDOMNode } from 'react-dom';
 class Gallery extends React.Component {
   constructor(props) {
     super(props);
-    this.element = null
-    this.width = null
-    this.height = null
-    this.left = null
-    this.top = null
     this.state = {
-      currentImage: this.props.itemImages[0].medium,
+      currentImage: this.props.itemImages[0],
       x: null,
-      y: null
+      y: null,
+      preview: false
     }
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
@@ -21,38 +17,56 @@ class Gallery extends React.Component {
 
   onImageClick (image) {
     this.setState({
-      currentImage: image.medium
+      currentImage: image
     });
   }
 
+  getPosition() {
+    // return (-this.state.x*2.5)+"px "+(-this.state.y*5.5)+"px"
+    return `${-this.state.x*2.5 + 170}px ${-this.state.y*2.5 + 205}px`;
+  }
+
   handleMouseEnter(e) {
-    let event = e.nativeEvent.offsetX;
-    console.log('onMouseEnter', e.nativeEvent.offsetX, e.nativeEvent.offsetY)
-    this.setState({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
+    this.setState({
+        preview: true,
+        x: e.nativeEvent.offsetX,
+        y: e.nativeEvent.offsetY
+    });
+    console.log(this.state.currentImage.large)
   }
 
   handleMouseMove(e){
-    console.log(
-      'onMouseMove',
-      e.nativeEvent.offsetX, e.nativeEvent.offsetY
-    )
-    this.setState({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
+    this.setState({
+      x: e.nativeEvent.offsetX,
+      y: e.nativeEvent.offsetY
+    });
   }
 
   handleMouseLeave(e) {
-    this.setState({ x: null, y: null });
+    this.setState({
+      x: null,
+      y: null,
+      preview: false
+    });
   }
 
   render() {
     return (
-      <div>
-        <p>Kate</p>
-        <img src={this.state.currentImage} onMouseEnter={this.handleMouseEnter} onMouseMove={this.handleMouseMove} onMouseLeave={this.handleMouseLeave}/>
-        <div id="preview"></div>
-        {this.props.itemImages.map((image) =>
-            <img src={image.small} onClick={()=> this.onImageClick(image)}/>
-        )}
-      </div>
+      <div className="gallery">
+        <div className="galleryMainImageDiv">
+          <img className="galleryMainImage" src={this.state.currentImage.medium} onMouseEnter={this.handleMouseEnter} onMouseMove={this.handleMouseMove} onMouseLeave={this.handleMouseLeave}/>
+        </div>
+        <div className="galleryZoomIconAndText">
+          <div className="galleryZoomIcon"></div>
+          <span className="galleryZoomText">Roll over image to zoom</span>
+        </div>
+        {this.state.preview && <div className="galleryPreview" style={{backgroundImage: `url(${this.state.currentImage.large})`, backgroundPosition: this.getPosition()}}></div>}
+        <div className="gallerySmallImages">
+          {this.props.itemImages.map((image) =>
+              <img className="gallerySmallImage" src={image.small} onClick={()=> this.onImageClick(image)}/>
+          )}
+        </div>
+    </div>
     );
   }
 

@@ -1,31 +1,44 @@
+.gallery {
+  width: 328px;
+}
 
-#preview{
+.galleryPreview {
   margin-top: 10px;
   border:1px solid black;
-  width:350px;
-  height:500px;
+  width:340px;
+  height:409px;
   background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
 }
 
-#samples{
+.galleryMainImageDiv {
+  border: 1px solid #d4dadc;
+}
+
+.galleryMainImage {
+  display: block;
+  max-width: 100%;
+}
+
+.galleryZoomIconAndText {
   text-align: center;
 }
-#samples img {
-  margin: 10px;
-  display: block;
-  border: 2px solid #6A6462;
+
+.galleryZoomIcon {
+  background-image: url("/petcoIcons.webp");
+  background-position: -96px -31px;
+  background-size: 500px;
+  opacity: .5;
+  height: 18px;
+  width: 25px;
+  display: inline-block;
 }
-#samples img:hover {
-   cursor: zoom-in;
-   border: 0;
-   -moz-box-shadow:2px 2px 7px 2px rgba(130,130,130,1),-1px -1px 7px 2px rgba(130,130,130,1);
-   -webkit-box-shadow: 2px 2px 7px 2px rgba(130,130,130,.7),-1px -1px 7px 2px rgba(130,130,130,1);
-   box-shadow: 2px 2px 7px 2px rgba(130,130,130,.7),-2px -2px 7px 2px rgba(130,130,130,1);
-}
-@media screen and (max-width: 767px){
-  #samples img {
-    display: inline-block;
-  }
+
+.galleryZoomText {
+  font-size: .8125em;
+  color: #656565;
+  font-weight: bold;
+  font-family: Arial,sans-serif;
+  display: inline-block;
 }
