@@ -14,7 +14,7 @@ class App extends React.Component {
   componentDidMount () {
     console.log('Item id', this.props.itemId)
     $.ajax ({
-      url: "/itemImages/" + this.props.itemId,
+      url: "http://localhost:3003/itemImages/" + this.props.itemId,
       type: "get",
       success: (data) => {
         console.log('Data returned form the server', data.itemImages);
@@ -37,5 +37,7 @@ class App extends React.Component {
   }
 }
 
-let itemId = '100';
+// let itemId = '100';
+const urlParams = new URLSearchParams(window.location.search);
+const itemId = urlParams.get('itemId');
 ReactDOM.render(<App itemId={itemId}/>, document.getElementById('gallery'));

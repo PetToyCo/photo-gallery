@@ -22,7 +22,6 @@ class Gallery extends React.Component {
   }
 
   getPosition() {
-    // return (-this.state.x*2.5)+"px "+(-this.state.y*5.5)+"px"
     return `${-this.state.x*2.5 + 170}px ${-this.state.y*2.5 + 205}px`;
   }
 
