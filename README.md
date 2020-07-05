@@ -10,7 +10,7 @@ Complete these set up tasks:
   };
 ```
 - run `npm run seed` (to seed the database)
-- run `npm test` (to test that seeding script works as expected)
+- run `npm test` (to test seeding script, api endpoints and react components)
 - start your application with two commands, `npm run client` and `npm start`, in two separate terminal tabs
 
 - Visit http://localhost:3003 in a browser
