@@ -22,7 +22,7 @@ class Gallery extends React.Component {
   }
 
   getPosition() {
-    return `${-this.state.x*2.5 + 170}px ${-this.state.y*2.5 + 205}px`;
+    return `${-this.state.x*3.06 + 170}px ${-this.state.y*3.06 + 205}px`;
   }
 
   handleMouseEnter(e) {

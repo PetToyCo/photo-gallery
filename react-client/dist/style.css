@@ -1,9 +1,12 @@
 .gallery {
+  position: relative;
   width: 328px;
 }
 
 .galleryPreview {
-  margin-top: 10px;
+  position: absolute;
+  top: 0;
+  left: 350px;
   border:1px solid black;
   width:340px;
   height:409px;

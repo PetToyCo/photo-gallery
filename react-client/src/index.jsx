@@ -39,5 +39,5 @@ class App extends React.Component {
 
 // let itemId = '100';
 const urlParams = new URLSearchParams(window.location.search);
-const itemId = urlParams.get('itemId');
+const itemId = urlParams.get('itemID');
 ReactDOM.render(<App itemId={itemId}/>, document.getElementById('gallery'));
