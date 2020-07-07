@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const Images = require('../database-mongodb/Images.js');
 const connect = require('../database-mongodb/connect.js')
-
+const cors = require('cors');
 const app = express();
-const PORT = 3003;
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

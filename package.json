@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand",
     "start": "nodemon server/start.js",
     "client": "webpack -d --watch",
     "seed": "node database-mongodb/seed.js"
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
     "mongoose": "^5.9.18",
@@ -31,6 +32,9 @@
     "eslint": "^7.3.0",
     "eslint-config-hackreactor": "github:reactorcore/eslint-config-hackreactor",
     "jest": "^26.1.0",
+    "jest-environment-enzyme": "^7.1.2",
+    "jest-enzyme": "^7.1.2",
+    "nodemon": "^2.0.4",
     "supertest": "^4.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
