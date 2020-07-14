@@ -14,7 +14,8 @@ class App extends React.Component {
   componentDidMount () {
     console.log('Item id', this.props.itemId)
     $.ajax ({
-      url: "http://localhost:3003/itemImages/" + this.props.itemId,
+      // url: "http://localhost:3003/itemImages/" + this.props.itemId,
+      url: "http://ec2-18-188-72-255.us-east-2.compute.amazonaws.com/itemImages/" + this.props.itemId,
       type: "get",
       success: (data) => {
         console.log('Data returned form the server', data.itemImages);
