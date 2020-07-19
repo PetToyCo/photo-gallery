@@ -13,6 +13,7 @@
   background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
 }
 
 .galleryMainImageDiv {
@@ -22,6 +23,8 @@
 .galleryMainImage {
   display: block;
   max-width: 100%;
+  height: 327px;
+  width: 327px;
 }
 
 .galleryZoomIconAndText {
@@ -44,4 +47,16 @@
   font-weight: bold;
   font-family: Arial,sans-serif;
   display: inline-block;
+}
+
+.gallerySmallImages {
+  margin-left: 15px
+}
+
+.gallerySmallImage {
+  height: 63px;
+  width: 63px;
+  margin: 10px 6px 0;
+  border: 1px solid #d4dadc;
+  cursor: pointer;
 }
