@@ -4,10 +4,12 @@ This service is meant to be used with a proxy server. If that is your intended u
 
 - run npm install inside the photo-gallery directory to install dependencies
 - make an API account with Unsplash https://unsplash.com/documentation#creating-a-developer-account
-- create a config.js file in helper directory and add the Unsplash Access key to it. Example:
+- create a config.js file in helper directory, put the following info and add the Unsplash Access key,  to it. Example:
 ```
   module.exports = {
-    TOKEN: YOUR_TOKEN
+    TOKEN: YOUR_TOKEN,
+    mongoUri: 'mongodb://localhost/images',
+    itemImages: 'http://localhost:3003/itemImages/'
   };
 ```
 - run `npm run seed` (to seed the database)
@@ -42,3 +44,6 @@ JSON response format:
 {"image":"https://images.unsplash.com/photo-1529954382468-c3b5e8371e10?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=54&fit=max&ixid=eyJhcHBfaWQiOjE0MjE3OH0"}
 
 ```
+
+Proxy server integration:
+To use this service with a proxy server, please add <div id="gallery"></div> in index.html of your proxy server, and please add <script type="text/javascript" src="http://localhost:3003/bundle.js"></script> near the bottom of the same file. Also you will need to place <link rel="stylesheet" href="http://localhost:3003/style.css"></link> file in the head of your html file.
