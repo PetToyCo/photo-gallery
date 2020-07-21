@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
+const config = require('../config.js');
 
 function connect() {
-  const mongoUri = 'mongodb://172.31.46.64/images';
+  const mongoUri = config.mongoUri;
   return mongoose.connect(mongoUri, {
     useNewUrlParser: true,
-    // user: process.env.MONGO_USERNAME,
-    // pass: process.env.MONGO_PASSWORD,
   });
 }
 
