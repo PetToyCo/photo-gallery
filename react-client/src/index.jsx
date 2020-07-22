@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Gallery from './Gallery.jsx';
 import $ from 'jquery';
+import config from '../../config.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class App extends React.Component {
   componentDidMount () {
     console.log('Item id', this.props.itemId)
     $.ajax ({
-      url: "http://localhost:3003/itemImages/" + this.props.itemId,
+      url: config.itemImages + this.props.itemId,
       type: "get",
       success: (data) => {
         console.log('Data returned form the server', data.itemImages);
