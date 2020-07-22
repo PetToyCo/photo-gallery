@@ -62,7 +62,7 @@ class Gallery extends React.Component {
         {this.state.preview && <div className="galleryPreview" style={{backgroundImage: `url(${this.state.currentImage.large})`, backgroundPosition: this.getPosition()}}></div>}
         <div className="gallerySmallImages">
           {this.props.itemImages.map((image) =>
-              <img className="gallerySmallImage" src={image.small} onClick={()=> this.onImageClick(image)}/>
+              <img className={`gallerySmallImage ${this.state.currentImage.small === image.small ? "galleryImageSelected": ""}`} src={image.small} onClick={()=> this.onImageClick(image)}/>
           )}
         </div>
     </div>

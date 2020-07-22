@@ -6,14 +6,14 @@
 .galleryPreview {
   position: absolute;
   top: 0;
-  left: 350px;
-  border:1px solid black;
+  left: 345px;
   width:340px;
   height:409px;
   background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
 }
 
 .galleryMainImageDiv {
@@ -29,6 +29,7 @@
 
 .galleryZoomIconAndText {
   text-align: center;
+  padding: 10px;
 }
 
 .galleryZoomIcon {
@@ -50,13 +51,18 @@
 }
 
 .gallerySmallImages {
-  margin-left: 15px
+  margin-left: 15px;
 }
 
 .gallerySmallImage {
-  height: 63px;
-  width: 63px;
-  margin: 10px 6px 0;
+  height: 59px;
+  width: 59px;
+  margin: 8px 6px 1px;
   border: 1px solid #d4dadc;
   cursor: pointer;
+}
+
+.gallerySmallImage.galleryImageSelected {
+  border: 2px solid rgb(0, 88, 145);
+  margin: 7px 5px 0;
 }
