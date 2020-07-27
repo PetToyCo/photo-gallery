@@ -4,13 +4,18 @@ const Images = require('../database-mongodb/Images.js');
 const connect = require('../database-mongodb/connect.js')
 const cors = require('cors');
 const app = express();
-const compression = require('compression');
+
 app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(compression());
+app.get('*.js', (req, res, next) => {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
+
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 
