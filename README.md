@@ -4,7 +4,7 @@ This service is meant to be used with a proxy server. If that is your intended u
 
 - run npm install inside the photo-gallery directory to install dependencies
 - make an API account with Unsplash https://unsplash.com/documentation#creating-a-developer-account
-- create a config.js file in helper directory, put the following info and add the Unsplash Access key,  to it. Example:
+- create a config.js file in project's root folder, put the following info and add the Unsplash Access key,  to it. Example:
 ```
   module.exports = {
     TOKEN: YOUR_TOKEN,
