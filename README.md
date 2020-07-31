@@ -1,17 +1,26 @@
 # photo-gallery
 
-This service is meant to be used with a proxy server. If that is your intended use:
+## Related Projects
 
+- https://github.com/PetToyCo/mainTitle_price
+- https://github.com/PetToyCo/reviews
+- https://github.com/PetToyCo/photo-gallery
+- https://github.com/PetToyCo/kate-proxy-server
+- https://github.com/PetToyCo/mainTitle_price
+
+## Table of Contents
+  1. Usage
+  2. Endpoints
+  3. Proxy Integration
+
+## Usage
+
+Please Note: This service is currently in Production mode. if you need to return it to development mode, follow these steps:
+
+This service is meant to be used with a proxy server. If that is your intended use:
 - run npm install inside the photo-gallery directory to install dependencies
 - make an API account with Unsplash https://unsplash.com/documentation#creating-a-developer-account
-- create a config.js file in root directory, put the following info and add the Unsplash Access key,  to it. Example:
-```
-  module.exports = {
-    TOKEN: YOUR_TOKEN,
-    mongoUri: 'mongodb://localhost/images',
-    itemImages: 'http://localhost:3003/itemImages/'
-  };
-```
+- to access the Unsplash API, you'll need a personal access token. Make a copy of config.example.js and rename it to config.js, then add your personal access token. This service is currently set up for the production mode, if you need to use it in the development mode, comment the aws configuration, and uncomment the local one.
 - run `npm run seed` (to seed the database)
 - run `npm test` (to test seeding script, api endpoints and react components)
 - start your application with two commands, `npm run client` and `npm start`, in two separate terminal tabs
@@ -45,5 +54,9 @@ JSON response format:
 
 ```
 
-Proxy server integration:
+## Proxy server integration:
+
+Production mode:
+To use this service with a proxy server, please add <div id="gallery"></div> in index.html of your proxy server, and please add <script type="text/javascript" src="http://18.224.229.28:3003/bundle.js"></script> near the bottom of the same file. Also you will need to place <link rel="stylesheet" href="http://18.224.229.28:3003/style.css"></link> file in the head of your html file.
+
 To use this service with a proxy server, please add <div id="gallery"></div> in index.html of your proxy server, and please add <script type="text/javascript" src="http://localhost:3003/bundle.js"></script> near the bottom of the same file. Also you will need to place <link rel="stylesheet" href="http://localhost:3003/style.css"></link> file in the head of your html file.
